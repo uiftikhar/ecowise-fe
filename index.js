@@ -3,18 +3,19 @@
  */
 
 import { Navigation } from 'react-native-navigation';
-import App from './App';
+import { registerScreens } from "./src/screens";
 
-Navigation.registerComponent(`App`, () => App);
+registerScreens();
 
 Navigation.events().registerAppLaunchedListener(() => {
+  // the initial routes we would like our application to render
   Navigation.setRoot({
     root: {
       stack: {
         children: [
           {
             component: {
-              name: 'App',
+              name: 'Initializing',
             },
           },
         ],
